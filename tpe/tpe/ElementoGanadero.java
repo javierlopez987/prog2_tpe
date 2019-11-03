@@ -11,7 +11,7 @@ public abstract class ElementoGanadero {
 	
 	public abstract String getCategoria();
 	
-	public abstract List<Animal> bucar(Filtro f);
+	public abstract List<Animal> buscar(Filtro f);
 	
 	public int getPromPeso() {
 		return getPeso() / getCantidad();
