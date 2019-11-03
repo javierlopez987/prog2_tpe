@@ -12,7 +12,7 @@ public class SistemaGanadero {
 	List<Camion> flota;
 	
 	public SistemaGanadero() {
-		ganaderia = new GrupoGanadero();
+		ganaderia = null;
 		categorias = new HashMap<>();
 		flota = new ArrayList<>();
 	}
