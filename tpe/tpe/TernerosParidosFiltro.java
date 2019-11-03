@@ -9,7 +9,7 @@ public class TernerosParidosFiltro implements Filtro {
 
 	@Override
 	public boolean cumple(Animal a) {
-		return a.getTernerosParidos() > getTernerosParidos();;
+		return a.getTernerosParidos() > getTernerosParidos();
 	}
 
 	public int getTernerosParidos() {
