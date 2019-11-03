@@ -12,14 +12,14 @@ public class Animal extends ElementoGanadero{
 	boolean isCapado;
 	int ternerosParidos;
 	
-	public Animal(int i, int e, int p, String r, String s) {
-		id = i;
-		edadMeses = e;
-		peso = p;
-		raza = r;
-		sexo = s;
-		isCapado = false;
-		ternerosParidos = 0;
+	public Animal(int id, int edadMeses, int peso, String raza, String sexo) {
+		this.id = id;
+		this.edadMeses = edadMeses;
+		this.peso = peso;
+		this.raza = raza;
+		this.sexo = sexo;
+		this.isCapado = false;
+		this.ternerosParidos = 0;
 	}
 	
 	public void parir(int terneros) {
