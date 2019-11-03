@@ -4,14 +4,24 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Camion {
+	String patente;
 	int capacidad;
 	List<Animal> carga;
 	
 	public Camion(int capacidad) {
 		this.capacidad = capacidad;
 		carga = new ArrayList<>();
+		patente = null;
 	}
 	
+	public String getPatente() {
+		return patente;
+	}
+
+	public void setPatente(String patente) {
+		this.patente = patente;
+	}
+
 	public boolean agregar(Animal a) {
 		if(carga.size() < getCapacidad()) {
 			return carga.add(a);

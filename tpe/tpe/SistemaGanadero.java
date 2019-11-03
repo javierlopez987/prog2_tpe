@@ -9,10 +9,12 @@ import java.util.Map;
 public class SistemaGanadero {
 	ElementoGanadero ganaderia;
 	Map<Filtro, String> categorias;
+	List<Camion> flota;
 	
 	public SistemaGanadero() {
 		ganaderia = new GrupoGanadero();
 		categorias = new HashMap<>();
+		flota = new ArrayList<>();
 	}
 	
 	public ElementoGanadero getGanaderia() {
@@ -66,8 +68,12 @@ public class SistemaGanadero {
 		return ganaderia.buscar(f);
 	};
 	
-	public List<Animal> cargarCamion(Camion c, Filtro f) {
-		return ganaderia.cargarCamion(c, f);
+	public List<Animal> cargarCamiones(Filtro f) {
+		List<Animal> result = new ArrayList<>();
+		for(Camion c: flota) {
+			result.addAll(ganaderia.cargarCamion(c, f));
+		}
+		return result;
 	};
 	
 	public int getPromPeso() {
