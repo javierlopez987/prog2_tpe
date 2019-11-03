@@ -15,6 +15,18 @@ public class SistemaGanadero {
 		categorias = new HashMap<>();
 	}
 	
+	public ElementoGanadero getGanaderia() {
+		return ganaderia;
+	}
+
+	public void setGanaderia(ElementoGanadero ganaderia) {
+		this.ganaderia = ganaderia;
+	}
+
+	public Map<Filtro, String> getCategorias() {
+		return categorias;
+	}
+
 	public void addCategoria(Filtro criterio, String nombre) {
 		categorias.put(criterio, nombre);
 	}
@@ -36,5 +48,33 @@ public class SistemaGanadero {
 			};
 		}
 		return result;
+	}
+	
+	private int getPeso() {
+		return ganaderia.getPeso();
+	};
+	
+	public int getCantidad() {
+		return ganaderia.getCantidad();
+	};
+	
+	private int getEdad() {
+		return ganaderia.getEdad();
+	};
+	
+	public List<Animal> buscar(Filtro f) {
+		return ganaderia.buscar(f);
+	};
+	
+	public List<Animal> cargarCamion(Camion c, Filtro f) {
+		return ganaderia.cargarCamion(c, f);
+	};
+	
+	public int getPromPeso() {
+		return getPeso() / getCantidad();
+	}
+	
+	public int getPromEdad() {
+		return getEdad() / getEdad();
 	}
 }
