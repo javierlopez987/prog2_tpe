@@ -7,7 +7,7 @@ import java.util.List;
 import java.util.Map;
 
 public class SistemaGanadero {
-	ElementoGanadero ganaderia;
+	GrupoGanadero ganaderia;
 	Map<Filtro, String> categorias;
 	List<Camion> flota;
 	
@@ -17,11 +17,11 @@ public class SistemaGanadero {
 		flota = new ArrayList<>();
 	}
 	
-	public ElementoGanadero getGanaderia() {
+	public GrupoGanadero getGanaderia() {
 		return ganaderia;
 	}
 
-	public void setGanaderia(ElementoGanadero ganaderia) {
+	public void setGanaderia(GrupoGanadero ganaderia) {
 		this.ganaderia = ganaderia;
 	}
 
