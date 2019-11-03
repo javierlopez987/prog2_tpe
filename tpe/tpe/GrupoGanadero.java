@@ -53,8 +53,22 @@ public class GrupoGanadero extends ElementoGanadero{
 	public List<Animal> buscar(Filtro f) {
 		List<Animal> result = new ArrayList<>();
 		for(ElementoGanadero e: rodeo) {
-			result.addAll( e.buscar(f) );
+			result.addAll(e.buscar(f));
 		}
+		return result;
+	}
+	
+	public void descargarStock(List<Animal> enCamion) {
+		rodeo.removeAll(enCamion);
+	}
+
+	@Override
+	public List<Animal> cargarCamion(Camion c, Filtro f) {
+		List<Animal> result = new ArrayList<>();
+		for(ElementoGanadero e: rodeo) {
+			result.addAll(e.cargarCamion(c, f));
+		}
+		descargarStock(result);
 		return result;
 	}
 }

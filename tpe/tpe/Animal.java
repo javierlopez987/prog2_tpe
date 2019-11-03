@@ -86,4 +86,13 @@ public class Animal extends ElementoGanadero{
 		};
 		return result;
 	}
+
+	@Override
+	public List<Animal> cargarCamion(Camion c, Filtro f) {
+		List<Animal> result = new ArrayList<>();
+		if(f.cumple(this) && !c.isCompleto()) {
+			result.add(this);
+		};
+		return result;
+	}
 }

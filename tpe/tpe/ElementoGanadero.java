@@ -11,6 +11,8 @@ public abstract class ElementoGanadero {
 	
 	public abstract List<Animal> buscar(Filtro f);
 	
+	public abstract List<Animal> cargarCamion(Camion c, Filtro f);
+	
 	public int getPromPeso() {
 		return getPeso() / getCantidad();
 	}
@@ -18,4 +20,5 @@ public abstract class ElementoGanadero {
 	public int getPromEdad() {
 		return getEdad() / getEdad();
 	}
+	
 }
