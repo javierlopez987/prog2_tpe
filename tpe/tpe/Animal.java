@@ -78,12 +78,6 @@ public class Animal extends ElementoGanadero{
 	}
 
 	@Override
-	public String getCategoria() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
 	public List<Animal> buscar(Filtro f) {
 		// TODO Auto-generated method stub
 		return null;

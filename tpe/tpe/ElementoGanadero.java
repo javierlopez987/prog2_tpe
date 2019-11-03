@@ -9,8 +9,6 @@ public abstract class ElementoGanadero {
 	
 	public abstract int getEdad();
 	
-	public abstract String getCategoria();
-	
 	public abstract List<Animal> buscar(Filtro f);
 	
 	public int getPromPeso() {
