@@ -1,5 +1,6 @@
 package tpe;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Animal extends ElementoGanadero{
@@ -79,7 +80,10 @@ public class Animal extends ElementoGanadero{
 
 	@Override
 	public List<Animal> buscar(Filtro f) {
-		// TODO Auto-generated method stub
-		return null;
+		List<Animal> result = new ArrayList<>();
+		if(f.cumple(this)) {
+			result.add(this);
+		};
+		return result;
 	}
 }
