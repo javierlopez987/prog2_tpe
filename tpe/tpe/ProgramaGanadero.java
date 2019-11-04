@@ -5,7 +5,7 @@ public class ProgramaGanadero {
 	public static void main(String[] args) {
 		SistemaGanadero administracion = new SistemaGanadero();
 		ElementoGanadero central = new GrupoGanadero();
-		administracion.setGanaderia(central);
+		administracion.setNodoPrincipal(central);
 		
 		ElementoGanadero establecimientoLecheroHolando = new GrupoGanadero();
 		ElementoGanadero lechera1 = new Animal(1001, 36, 950, "Holando", "Hembra");
@@ -90,7 +90,16 @@ public class ProgramaGanadero {
 		((GrupoGanadero) central).agregar(establecimientoCriaAberdeenAngus);
 		((GrupoGanadero) central).agregar(reproductorIndependiente);
 		Filtro vaca = new SexoFiltro("Hembra");
-		administracion.addCategoria(vaca, "Vaca");
+		Filtro raza1 = new RazaFiltro("Aberdeen Angus");
+		Filtro vaquillona = new EdadFiltroMay(15);
+		Filtro noMadre = new TernerosParidosFiltroMay(-1);
+		Filtro And = new AndFiltro(vaca, vaquillona);
+		Filtro And2 = new AndFiltro(And, noMadre);
+		administracion.addCategoriaDeClasificacion(vaca, "Hembra");
+		administracion.addCategoriaDeClasificacion(And2, "Vaquillona");
+		administracion.addCategoriaDeClasificacion(raza1, "Raza Negra");
+		administracion.addCategoriaDeClasificacion(noMadre, "No madre");
+		
 		
 		System.out.println("Animales: " + administracion.getCantidad());
 		System.out.println(administracion.clasificar((Animal) animal1100));

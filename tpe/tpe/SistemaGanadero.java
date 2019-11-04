@@ -1,53 +1,43 @@
 package tpe;
 
 import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Iterator;
 import java.util.List;
-import java.util.Map;
 
 public class SistemaGanadero {
 	ElementoGanadero ganaderia;
-	Map<Filtro, String> categorias;
+	List<Categoria> categorizacion;
 	List<Camion> flota;
 	
 	public SistemaGanadero() {
 		ganaderia = null;
-		categorias = new HashMap<>();
+		categorizacion = new ArrayList<>();
 		flota = new ArrayList<>();
 	}
 	
-	public ElementoGanadero getGanaderia() {
+	public ElementoGanadero getNodoPrincipal() {
 		return ganaderia;
 	}
 
-	public void setGanaderia(ElementoGanadero ganaderia) {
+	public void setNodoPrincipal(ElementoGanadero ganaderia) {
 		this.ganaderia = ganaderia;
 	}
 
-	public Map<Filtro, String> getCategorias() {
-		return categorias;
+	public void addCategoriaDeClasificacion(Filtro criterio, String nombre) {
+		Categoria c = new Categoria(criterio, nombre);
+		categorizacion.add(c);
 	}
 
-	public void addCategoria(Filtro criterio, String nombre) {
-		categorias.put(criterio, nombre);
-	}
-	
-	public String getCategoria(Filtro f) {
-		return categorias.get(f);
-	}
-	
-	public void deleteCategoria(Filtro f) {
-		categorias.remove(f);
+	public void addCamionAFlota(int capacidad) {
+		Camion c = new Camion (capacidad);
+		flota.add(c);
 	}
 	
 	public List<String> clasificar(Animal a) {
 		List<String> result = new ArrayList<>();
-		Iterator<Filtro> filtros = categorias.keySet().iterator();
-		if(filtros.hasNext()) {
-			if(filtros.next().cumple(a)) {
-				result.add(categorias.get(filtros.next()));
-			};
+		for(Categoria c: categorizacion) {
+			if(c.getCriterio().cumple(a)) {
+				result.add(c.getCategoria());
+			}
 		}
 		return result;
 	}
