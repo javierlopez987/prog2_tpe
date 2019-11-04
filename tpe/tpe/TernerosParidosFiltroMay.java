@@ -1,9 +1,9 @@
 package tpe;
 
-public class TernerosParidosFiltro implements Filtro {
+public class TernerosParidosFiltroMay implements Filtro {
 	int ternerosParidos;
 	
-	public TernerosParidosFiltro(int t) {
+	public TernerosParidosFiltroMay(int t) {
 		ternerosParidos = t;
 	}
 
