@@ -1,15 +1,17 @@
-package tpe;
+package tpe.Filtros;
 
-public class EdadFiltroMay implements Filtro {
+import tpe.Composite.Animal;
+
+public class EdadFiltroMen implements Filtro {
 	int edad;
 	
-	public EdadFiltroMay(int edadMeses) {
+	public EdadFiltroMen(int edadMeses) {
 		edad = edadMeses;
 	}
 
 	@Override
 	public boolean cumple(Animal a) {
-		return a.getEdad() > getEdad();
+		return a.getEdad() < getEdad();
 	}
 
 	public int getEdad() {

@@ -1,4 +1,6 @@
-package tpe;
+package tpe.Filtros;
+
+import tpe.Composite.Animal;
 
 public class RazaFiltro implements Filtro {
 	String raza;

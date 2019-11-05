@@ -1,4 +1,6 @@
-package tpe;
+package tpe.Filtros;
+
+import tpe.Composite.Animal;
 
 public class TernerosParidosFiltroMay implements Filtro {
 	int ternerosParidos;

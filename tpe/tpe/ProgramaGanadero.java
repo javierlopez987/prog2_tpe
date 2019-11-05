@@ -1,5 +1,15 @@
 	package tpe;
 
+import tpe.Composite.Animal;
+import tpe.Composite.ElementoGanadero;
+import tpe.Composite.GrupoGanadero;
+import tpe.Filtros.AndFiltro;
+import tpe.Filtros.EdadFiltroMay;
+import tpe.Filtros.Filtro;
+import tpe.Filtros.RazaFiltro;
+import tpe.Filtros.SexoFiltro;
+import tpe.Filtros.TernerosParidosFiltroMay;
+
 public class ProgramaGanadero {
 
 	public static void main(String[] args) {

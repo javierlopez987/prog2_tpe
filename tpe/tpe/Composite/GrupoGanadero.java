@@ -1,7 +1,10 @@
-package tpe;
+package tpe.Composite;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import tpe.Camion;
+import tpe.Filtros.Filtro;
 
 public class GrupoGanadero extends ElementoGanadero{
 	List<ElementoGanadero> rodeo;

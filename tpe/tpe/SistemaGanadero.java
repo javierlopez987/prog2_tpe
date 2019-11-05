@@ -3,6 +3,10 @@ package tpe;
 import java.util.ArrayList;
 import java.util.List;
 
+import tpe.Composite.Animal;
+import tpe.Composite.ElementoGanadero;
+import tpe.Filtros.Filtro;
+
 public class SistemaGanadero {
 	ElementoGanadero ganaderia;
 	List<Categoria> categorizacion;

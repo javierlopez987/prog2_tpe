@@ -3,6 +3,8 @@ package tpe;
 import java.util.ArrayList;
 import java.util.List;
 
+import tpe.Composite.Animal;
+
 public class Camion {
 	String patente;
 	int capacidad;

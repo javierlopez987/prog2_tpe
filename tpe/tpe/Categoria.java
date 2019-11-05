@@ -1,5 +1,7 @@
 package tpe;
 
+import tpe.Filtros.Filtro;
+
 public class Categoria {
 	Filtro criterio;
 	String categoria;

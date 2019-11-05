@@ -1,4 +1,6 @@
-package tpe;
+package tpe.Filtros;
+
+import tpe.Composite.Animal;
 
 public class CapadoFiltro implements Filtro {
 	public CapadoFiltro() {
@@ -7,7 +9,7 @@ public class CapadoFiltro implements Filtro {
 
 	@Override
 	public boolean cumple(Animal a) {
-		return a.isCapado;
+		return a.isCapado();
 	}
 	
 	
