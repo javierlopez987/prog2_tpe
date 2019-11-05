@@ -2,24 +2,16 @@ package tpe.Filtros;
 
 import tpe.Composite.Animal;
 
-public class PesoFiltroMay implements Filtro{
-	int peso;
-	
+public class PesoFiltroMay extends PesoFiltro implements Filtro{
+
 	public PesoFiltroMay(int p) {
-		peso = p;
+		super(p);
 	}
 
 	@Override
 	public boolean cumple(Animal a) {
 		return a.getPeso() > getPeso();
 	}
-	
-	public int getPeso() {
-		return peso;
-	}
 
-	public void setPeso(int peso) {
-		this.peso = peso;
-	}
 
 }

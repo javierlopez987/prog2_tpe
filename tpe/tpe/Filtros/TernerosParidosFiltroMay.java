@@ -2,24 +2,17 @@ package tpe.Filtros;
 
 import tpe.Composite.Animal;
 
-public class TernerosParidosFiltroMay implements Filtro {
-	int ternerosParidos;
+public class TernerosParidosFiltroMay extends TernerosParidos implements Filtro {
 	
 	public TernerosParidosFiltroMay(int t) {
-		ternerosParidos = t;
+		super(t);
 	}
-
+	
 	@Override
 	public boolean cumple(Animal a) {
 		return a.getTernerosParidos() > getTernerosParidos();
 	}
 
-	public int getTernerosParidos() {
-		return ternerosParidos;
-	}
-
-	public void setTernerosParidos(int ternerosParidos) {
-		this.ternerosParidos = ternerosParidos;
-	}
+	
 	
 }

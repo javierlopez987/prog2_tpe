@@ -2,11 +2,11 @@ package tpe.Filtros;
 
 import tpe.Composite.Animal;
 
-public class PromPesoFiltroMay implements Filtro {
-	int promPeso;
+public class PromPesoFiltroMay extends PromPeso implements Filtro {
+	
 	
 	public PromPesoFiltroMay(int p) {
-		promPeso = p;
+		super(p);
 	}
 	
 	@Override
@@ -14,12 +14,5 @@ public class PromPesoFiltroMay implements Filtro {
 		return a.getPromPeso() > getPromPeso();
 	}
 
-	public int getPromPeso() {
-		return promPeso;
-	}
 
-	public void setPromPeso(int promPeso) {
-		this.promPeso = promPeso;
-	}
-	
 }
