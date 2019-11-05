@@ -10,12 +10,10 @@ public class TernerosParidosFiltroIgual extends TernerosParidos implements Filtr
 	}
 
 	@Override
+
 	public boolean cumple(Animal a) {
 		return a.getTernerosParidos() == getTernerosParidos();
 	}
-
-	
-
 
 
 }
