@@ -94,8 +94,22 @@ public class Animal extends ElementoGanadero{
 	public List<Animal> cargarCamion(Camion c, Filtro f) {
 		List<Animal> result = new ArrayList<>();
 		if(f.cumple(this) && !c.isCompleto()) {
+			c.agregar(this);
 			result.add(this);
 		};
 		return result;
+	}
+	@Override
+	public String ToString() {
+		
+
+		return "El id es: "+ this.id + " |" +
+				"La edad en Meses es: "+ this.edadMeses +" |" +
+				"El peso es: "+ this.peso + " |" +
+				"La raza es: "+ this.raza +" |" +
+				"El sexo es: "+ this.sexo +" |" +
+				"Terneros Paridos " + this.ternerosParidos+" |"
+				;
+		
 	}
 }

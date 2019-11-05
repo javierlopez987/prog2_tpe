@@ -1,15 +1,8 @@
-	package tpe;
+	package tests;
 
-import tpe.Composite.Animal;
-import tpe.Composite.ElementoGanadero;
-import tpe.Composite.GrupoGanadero;
-import tpe.Filtros.AndFiltro;
-import tpe.Filtros.EdadFiltroMay;
-import tpe.Filtros.Filtro;
-import tpe.Filtros.RazaFiltro;
-import tpe.Filtros.SexoFiltro;
-import tpe.Filtros.TernerosParidosFiltroMay;
-
+import tpe.SistemaGanadero;
+import tpe.Composite.*;
+import tpe.Filtros.*;
 public class ProgramaGanadero {
 
 	public static void main(String[] args) {
@@ -101,9 +94,9 @@ public class ProgramaGanadero {
 		((GrupoGanadero) central).agregar(reproductorIndependiente);
 		Filtro vaca = new SexoFiltro("Hembra");
 		Filtro raza1 = new RazaFiltro("Aberdeen Angus");
-		Filtro vaquillona = new EdadFiltroMay(15);
-		Filtro noMadre = new TernerosParidosFiltroMay(-1);
-		Filtro And = new AndFiltro(vaca, vaquillona);
+		Filtro edadmayor = new EdadFiltroMay(15);
+		Filtro noMadre = new TernerosParidosFiltroIgual(0);
+		Filtro And = new AndFiltro(vaca, edadmayor);
 		Filtro And2 = new AndFiltro(And, noMadre);
 		administracion.addCategoriaDeClasificacion(vaca, "Hembra");
 		administracion.addCategoriaDeClasificacion(And2, "Vaquillona");

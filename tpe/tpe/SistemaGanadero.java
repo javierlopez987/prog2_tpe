@@ -31,8 +31,8 @@ public class SistemaGanadero {
 		categorizacion.add(c);
 	}
 
-	public void addCamionAFlota(int capacidad) {
-		Camion c = new Camion (capacidad);
+	public void addCamionAFlota(Camion c) {
+		
 		flota.add(c);
 	}
 	

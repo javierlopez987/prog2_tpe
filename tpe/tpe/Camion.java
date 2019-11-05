@@ -25,8 +25,10 @@ public class Camion {
 	}
 
 	public boolean agregar(Animal a) {
-		if(carga.size() < getCapacidad()) {
-			return carga.add(a);
+		if(carga.size() < this.capacidad) {
+			
+			carga.add(a);
+			return true;
 		}
 		return false;
 	}

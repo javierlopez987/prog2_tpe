@@ -21,7 +21,9 @@ public abstract class ElementoGanadero {
 	}
 	
 	public int getPromEdad() {
-		return getEdad() / getEdad();
+		return getEdad() / getCantidad();
 	}
+
+	public abstract String ToString();
 	
 }
