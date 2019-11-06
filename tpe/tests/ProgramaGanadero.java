@@ -1,5 +1,6 @@
 	package tests;
 
+import tpe.Camion;
 import tpe.SistemaGanadero;
 import tpe.Composite.*;
 import tpe.Filtros.*;
@@ -98,14 +99,28 @@ public class ProgramaGanadero {
 		Filtro noMadre = new TernerosParidosFiltroIgual(0);
 		Filtro And = new AndFiltro(vaca, edadmayor);
 		Filtro And2 = new AndFiltro(And, noMadre);
+		
 		administracion.addCategoriaDeClasificacion(vaca, "Hembra");
 		administracion.addCategoriaDeClasificacion(And2, "Vaquillona");
-		administracion.addCategoriaDeClasificacion(raza1, "Raza Negra");
+		administracion.addCategoriaDeClasificacion(raza1, "Raza Fuerte");
 		administracion.addCategoriaDeClasificacion(noMadre, "No madre");
 		
+		Camion camion1 = new Camion(1, "AA 102 BC");
+		Camion camion2 = new Camion(7, "AC 206 FG");
+		administracion.addCamionAFlota(camion1);
+		administracion.addCamionAFlota(camion2);
+		administracion.cargarCamiones(And2);
 		
 		System.out.println("Animales: " + administracion.getCantidad());
+		System.out.println("Promedio de edad: " + administracion.getPromEdad());
+		System.out.println("Peso total: " + administracion.getPesoTotal());
+		System.out.println("Peso promedio: " + administracion.getPromPeso());
+		
 		System.out.println(administracion.clasificar((Animal) animal1100));
+		
+		administracion.mostrarCamion(camion1);
+		administracion.mostrarCamion(camion2);
+		
 	}
 
 }

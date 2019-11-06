@@ -1,18 +1,26 @@
 package tpe.Filtros;
 
-import tpe.Composite.Animal;
+import tpe.Composite.GrupoGanadero;
 
-public class PromPesoFiltroMay extends PromPeso implements Filtro {
-	
+public class PromPesoFiltroMay implements FiltroGrupal {
+	int promPeso;
 	
 	public PromPesoFiltroMay(int p) {
-		super(p);
+		promPeso = p;
 	}
 	
 	@Override
-	public boolean cumple(Animal a) {
-		return a.getPromPeso() > getPromPeso();
+	public boolean cumple(GrupoGanadero g) {
+		return g.getPromPeso() > this.getPromPeso();
 	}
 
+	public int getPromPeso() {
+		return promPeso;
+	}
 
+	public void setPromPeso(int promPeso) {
+		this.promPeso = promPeso;
+	}
+
+	
 }

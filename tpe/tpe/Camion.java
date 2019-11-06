@@ -1,19 +1,20 @@
 package tpe;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 import tpe.Composite.Animal;
 
-public class Camion {
+public class Camion implements Iterable<Animal>{
 	String patente;
 	int capacidad;
 	List<Animal> carga;
 	
-	public Camion(int capacidad) {
+	public Camion(int capacidad, String patente) {
 		this.capacidad = capacidad;
 		carga = new ArrayList<>();
-		patente = null;
+		this.patente = patente;
 	}
 	
 	public String getPatente() {
@@ -26,9 +27,7 @@ public class Camion {
 
 	public boolean agregar(Animal a) {
 		if(carga.size() < this.capacidad) {
-			
-			carga.add(a);
-			return true;
+			return carga.add(a);
 		}
 		return false;
 	}
@@ -47,5 +46,15 @@ public class Camion {
 	
 	public boolean isCompleto() {
 		return carga.size() == getCapacidad();
+	}
+
+	@Override
+	public Iterator<Animal> iterator() {
+		return carga.iterator();
+	}
+
+	@Override
+	public String toString() {
+		return "Camion [patente=" + patente + ", capacidad=" + capacidad + "]";
 	}
 }

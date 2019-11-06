@@ -61,7 +61,7 @@ public class GrupoGanadero extends ElementoGanadero{
 		return result;
 	}
 	
-	public void descargarStock(List<Animal> enCamion) {
+	private void descargarStock(List<Animal> enCamion) {
 		rodeo.removeAll(enCamion);
 	}
 
@@ -73,19 +73,6 @@ public class GrupoGanadero extends ElementoGanadero{
 		}
 		descargarStock(result);
 		return result;
-	}
-	
-
-	
-	public String ToString() {
-		
-		String string = "";
-		
-		for(ElementoGanadero e:rodeo)
-		{
-			string+= e.ToString();
-		}
-		return string;
 	}
 	
 	public List<ElementoGanadero> getRodeo()

@@ -99,8 +99,8 @@ public class Animal extends ElementoGanadero{
 		};
 		return result;
 	}
-	@Override
-	public String ToString() {
+	
+	public String toString() {
 		
 
 		return "El id es: "+ this.id + " |" +

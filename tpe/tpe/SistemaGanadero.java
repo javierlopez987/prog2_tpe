@@ -3,9 +3,8 @@ package tpe;
 import java.util.ArrayList;
 import java.util.List;
 
-import tpe.Composite.Animal;
-import tpe.Composite.ElementoGanadero;
-import tpe.Filtros.Filtro;
+import tpe.Composite.*;
+import tpe.Filtros.*;
 
 public class SistemaGanadero {
 	ElementoGanadero ganaderia;
@@ -30,9 +29,12 @@ public class SistemaGanadero {
 		Categoria c = new Categoria(criterio, nombre);
 		categorizacion.add(c);
 	}
+	
+	public List<Camion> getFlota() {
+		return flota;
+	}
 
 	public void addCamionAFlota(Camion c) {
-		
 		flota.add(c);
 	}
 	
@@ -46,21 +48,13 @@ public class SistemaGanadero {
 		return result;
 	}
 	
-	private int getPeso() {
-		return ganaderia.getPeso();
-	};
-	
 	public int getCantidad() {
 		return ganaderia.getCantidad();
-	};
-	
-	private int getEdad() {
-		return ganaderia.getEdad();
-	};
+	}
 	
 	public List<Animal> buscar(Filtro f) {
 		return ganaderia.buscar(f);
-	};
+	}
 	
 	public List<Animal> cargarCamiones(Filtro f) {
 		List<Animal> result = new ArrayList<>();
@@ -68,13 +62,25 @@ public class SistemaGanadero {
 			result.addAll(ganaderia.cargarCamion(c, f));
 		}
 		return result;
-	};
+	}
 	
 	public int getPromPeso() {
-		return getPeso() / getCantidad();
+		return ganaderia.getPromPeso();
 	}
 	
 	public int getPromEdad() {
-		return getEdad() / getEdad();
+		return ganaderia.getPromEdad();
+	}
+	
+	public int getPesoTotal() {
+		return ganaderia.getPeso();
+	}
+	
+	public void mostrarCamion(Camion camion) {
+		System.out.println("------------------------------");
+		System.out.println("Los animales dentro del " + camion + " son: ");
+		for(Animal a: camion) {
+			System.out.println(a);
+		}
 	}
 }
