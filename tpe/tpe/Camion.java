@@ -40,9 +40,12 @@ public class Camion implements Iterable<Animal>{
 		this.capacidad = capacidad;
 	}
 
+	// No retornar Colección - Se rompe encapsulamiento
+	/*
 	public List<Animal> getCarga() {
 		return carga;
 	}
+	*/
 	
 	public boolean isCompleto() {
 		return carga.size() == getCapacidad();

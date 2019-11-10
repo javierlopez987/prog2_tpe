@@ -30,9 +30,12 @@ public class SistemaGanadero {
 		categorizacion.add(c);
 	}
 	
+	// No retornar Colección - Se rompe encapsulamiento
+	/*
 	public List<Camion> getFlota() {
 		return flota;
 	}
+	*/
 
 	public void addCamionAFlota(Camion c) {
 		flota.add(c);
@@ -48,8 +51,8 @@ public class SistemaGanadero {
 		return result;
 	}
 	
-	public int getCantidad() {
-		return ganaderia.getCantidad();
+	public int getCantidadTotal() {
+		return ganaderia.getCantidadTotal();
 	}
 	
 	public List<Animal> buscar(Filtro f) {
@@ -64,23 +67,31 @@ public class SistemaGanadero {
 		return result;
 	}
 	
-	public int getPromPeso() {
+	public double getPromPeso() {
 		return ganaderia.getPromPeso();
 	}
 	
-	public int getPromEdad() {
+	public double getPromEdad() {
 		return ganaderia.getPromEdad();
 	}
 	
 	public int getPesoTotal() {
-		return ganaderia.getPeso();
+		return ganaderia.getPesoTotal();
 	}
 	
 	public void mostrarCamion(Camion camion) {
 		System.out.println("------------------------------");
-		System.out.println("Los animales dentro del " + camion + " son: ");
+		System.out.println("LOS ANIMALES DENTRO DEL CAMION " + camion + " SON: ");
 		for(Animal a: camion) {
 			System.out.println(a);
+		}
+	}
+	
+	public void mostrarEstadoGanaderia(GrupoGanadero ganaderia) {
+		System.out.println("------------------------------");
+		System.out.println("LOS ANIMALES EN EL SISTEMA SON: ");
+		for(ElementoGanadero e: ganaderia) {
+			System.out.println(e);
 		}
 	}
 }

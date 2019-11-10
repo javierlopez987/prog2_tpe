@@ -1,12 +1,13 @@
 package tpe.Composite;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 import tpe.Camion;
 import tpe.Filtros.Filtro;
 
-public class GrupoGanadero extends ElementoGanadero{
+public class GrupoGanadero extends ElementoGanadero implements Iterable<ElementoGanadero>{
 	List<ElementoGanadero> rodeo;
 	
 	public GrupoGanadero() {
@@ -17,6 +18,8 @@ public class GrupoGanadero extends ElementoGanadero{
 		rodeo.add(e);
 	}
 	
+	//NO eliminar elementos
+	/*
 	public void quitar(ElementoGanadero e) {
 		rodeo.remove(e);
 	}
@@ -24,30 +27,31 @@ public class GrupoGanadero extends ElementoGanadero{
 	public void quitarRodeo(List<ElementoGanadero> c) {
 		rodeo.removeAll(c);
 	}
+	*/
 
 	@Override
-	public int getPeso() {
+	public int getPesoTotal() {
 		int suma = 0;
 		for(ElementoGanadero e: rodeo) {
-			suma += e.getPeso();
+			suma += e.getPesoTotal();
 		}
 		return suma;
 	}
 
 	@Override
-	public int getCantidad() {
+	public int getCantidadTotal() {
 		int suma = 0;
 		for(ElementoGanadero e: rodeo) {
-			suma += e.getCantidad();
+			suma += e.getCantidadTotal();
 		}
 		return suma;
 	}
 
 	@Override
-	public int getEdad() {
+	public int getEdadTotal() {
 		int suma = 0;
 		for(ElementoGanadero e: rodeo) {
-			suma += e.getEdad();
+			suma += e.getEdadTotal();
 		}
 		return suma;
 	}
@@ -75,8 +79,25 @@ public class GrupoGanadero extends ElementoGanadero{
 		return result;
 	}
 	
+	// No retornar Colección - Se rompe encapsulamiento
+	/*
 	public List<ElementoGanadero> getRodeo()
 	{
 		return this.rodeo;
+	}
+	*/
+	
+	//Se agrega toString()
+	public String toString() {
+		String result = "";
+		for(ElementoGanadero e: rodeo) {
+			result += e.toString() + "\n";
+		}
+		return result;
+	}
+	
+	//Se agrega iterator()
+	public Iterator<ElementoGanadero> iterator() {
+		return rodeo.iterator();
 	}
 }
