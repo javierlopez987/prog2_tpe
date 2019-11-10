@@ -11,7 +11,7 @@ public class EdadFiltroMen implements Filtro {
 
 	@Override
 	public boolean cumple(Animal a) {
-		return a.getEdad() < getEdad();
+		return a.getEdadTotal() < getEdad();
 	}
 
 	public int getEdad() {

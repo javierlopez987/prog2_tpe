@@ -11,7 +11,7 @@ public class PesoFiltroMay implements Filtro{
 
 	@Override
 	public boolean cumple(Animal a) {
-		return a.getPeso() > this.peso;
+		return a.getPesoTotal() > this.peso;
 	}
 
 

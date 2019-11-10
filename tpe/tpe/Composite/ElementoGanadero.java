@@ -6,22 +6,26 @@ import tpe.Camion;
 import tpe.Filtros.Filtro;
 
 public abstract class ElementoGanadero {
-	public abstract int getPeso();
+	public abstract int getPesoTotal();
 	
-	public abstract int getCantidad();
+	public abstract int getCantidadTotal();
 	
-	public abstract int getEdad();
+	public abstract int getEdadTotal();
 	
 	public abstract List<Animal> buscar(Filtro f);
 	
 	public abstract List<Animal> cargarCamion(Camion c, Filtro f);
 	
-	public int getPromPeso() {
-		return getPeso() / getCantidad();
+	//return double
+	public double getPromPeso() {
+		return getPesoTotal() / getCantidadTotal();
 	}
 	
-	public int getPromEdad() {
-		return getEdad() / getCantidad();
+	//return double
+	public double getPromEdad() {
+		return getEdadTotal() / getCantidadTotal();
 	}
 
+	//Se agrega toString()
+	public abstract String toString();
 }

@@ -55,10 +55,6 @@ public class Animal extends ElementoGanadero{
 		return id;
 	}
 
-	public int getPeso() {
-		return peso;
-	}
-
 	public String getSexo() {
 		return sexo;
 	}
@@ -70,14 +66,23 @@ public class Animal extends ElementoGanadero{
 	public boolean isCapado() {
 		return isCapado;
 	}
+	
+	public boolean isMacho() {
+		final String MACHO = "Macho";
+		return this.getSexo() == MACHO;
+	}
 
+	public int getPesoTotal() {
+		return peso;
+	}
+	
 	@Override
-	public int getCantidad() {
+	public int getCantidadTotal() {
 		return 1;
 	}
 
 	@Override
-	public int getEdad() {
+	public int getEdadTotal() {
 		return edadMeses;
 	}
 
@@ -101,15 +106,14 @@ public class Animal extends ElementoGanadero{
 	}
 	
 	public String toString() {
-		
-
-		return "El id es: "+ this.id + " |" +
-				"La edad en Meses es: "+ this.edadMeses +" |" +
-				"El peso es: "+ this.peso + " |" +
-				"La raza es: "+ this.raza +" |" +
-				"El sexo es: "+ this.sexo +" |" +
-				"Terneros Paridos " + this.ternerosParidos+" |"
-				;
-		
+		String result = 
+				"id: "+ this.id + " |" +
+				"Edad en meses: "+ this.edadMeses +" |" +
+				"Peso: "+ this.peso + " |" +
+				"Raza: "+ this.raza +" |" +
+				"Sexo: "+ this.sexo +" |";
+		if (!this.isMacho())
+				result += "Terneros paridos " + this.ternerosParidos+" |";
+		return result;
 	}
 }

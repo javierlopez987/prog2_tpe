@@ -29,7 +29,7 @@ public class ProgramaGanadero {
 		ElementoGanadero rodeoHereford1 = new GrupoGanadero();
 		ElementoGanadero animal501 = new Animal(1101, 48, 550, "Hereford", "Hembra");
 		ElementoGanadero animal502 = new Animal(1102, 48, 620, "Hereford", "Hembra");
-		ElementoGanadero reproductor1 = new Animal(1001, 48, 900, "Hereford", "Macho");
+		ElementoGanadero reproductor1 = new Animal(1902, 48, 900, "Hereford", "Macho");
 		((GrupoGanadero) rodeoHereford1).agregar(animal501);
 		((GrupoGanadero) rodeoHereford1).agregar(animal502);
 		((GrupoGanadero) rodeoHereford1).agregar(reproductor1);
@@ -59,18 +59,17 @@ public class ProgramaGanadero {
 		((GrupoGanadero) establecimientoCriaHereford).agregar(rodeoHereford1);
 		((GrupoGanadero) establecimientoCriaHereford).agregar(rodeoHereford2);
 		
-		ElementoGanadero reproductorIndependiente = new Animal(1001, 48, 1100, "Hereford", "Macho");
-		((GrupoGanadero) central).agregar(reproductorIndependiente);
+		ElementoGanadero reproductorIndependiente = new Animal(1901, 48, 1100, "Hereford", "Macho");
 		
 		ElementoGanadero establecimientoInvernadaAberdeenAngus = new GrupoGanadero();
-		ElementoGanadero animal100 = new Animal(1001, 6, 280, "Aberdeen Angus", "Macho");
-		ElementoGanadero animal200 = new Animal(1001, 8, 380, "Aberdeen Angus", "Macho");
-		ElementoGanadero animal300 = new Animal(1001, 12, 480, "Aberdeen Angus", "Macho");
-		ElementoGanadero animal400 = new Animal(1001, 16, 600, "Aberdeen Angus", "Macho");
-		ElementoGanadero animal500 = new Animal(1001, 10, 400, "Aberdeen Angus", "Macho");
-		ElementoGanadero animal600 = new Animal(1001, 20, 650, "Aberdeen Angus", "Macho");
-		ElementoGanadero animal700 = new Animal(1001, 14, 500, "Aberdeen Angus", "Macho");
-		ElementoGanadero animal800 = new Animal(1001, 12, 450, "Aberdeen Angus", "Macho");
+		ElementoGanadero animal100 = new Animal(1301, 6, 280, "Aberdeen Angus", "Macho");
+		ElementoGanadero animal200 = new Animal(1302, 8, 380, "Aberdeen Angus", "Macho");
+		ElementoGanadero animal300 = new Animal(1303, 12, 480, "Aberdeen Angus", "Macho");
+		ElementoGanadero animal400 = new Animal(1304, 16, 600, "Aberdeen Angus", "Macho");
+		ElementoGanadero animal500 = new Animal(1305, 10, 400, "Aberdeen Angus", "Macho");
+		ElementoGanadero animal600 = new Animal(1306, 20, 650, "Aberdeen Angus", "Macho");
+		ElementoGanadero animal700 = new Animal(1307, 14, 500, "Aberdeen Angus", "Macho");
+		ElementoGanadero animal800 = new Animal(1308, 12, 450, "Aberdeen Angus", "Macho");
 		((GrupoGanadero) establecimientoInvernadaAberdeenAngus).agregar(animal100);
 		((GrupoGanadero) establecimientoInvernadaAberdeenAngus).agregar(animal200);
 		((GrupoGanadero) establecimientoInvernadaAberdeenAngus).agregar(animal300);
@@ -83,7 +82,7 @@ public class ProgramaGanadero {
 		ElementoGanadero establecimientoCriaAberdeenAngus = new GrupoGanadero();
 		ElementoGanadero animal1100 = new Animal(1101, 48, 520, "Aberdeen Angus", "Hembra");
 		ElementoGanadero animal1200 = new Animal(1102, 48, 560, "Aberdeen Angus", "Hembra");
-		ElementoGanadero reproductor100 = new Animal(1001, 48, 850, "Aberdeen Angus", "Macho");
+		ElementoGanadero reproductor100 = new Animal(1903, 48, 850, "Aberdeen Angus", "Macho");
 		((GrupoGanadero) establecimientoCriaAberdeenAngus).agregar(animal1100);
 		((GrupoGanadero) establecimientoCriaAberdeenAngus).agregar(animal1200);
 		((GrupoGanadero) establecimientoCriaAberdeenAngus).agregar(reproductor100);
@@ -105,22 +104,33 @@ public class ProgramaGanadero {
 		administracion.addCategoriaDeClasificacion(raza1, "Raza Fuerte");
 		administracion.addCategoriaDeClasificacion(noMadre, "No madre");
 		
+		administracion.mostrarEstadoGanaderia((GrupoGanadero) central);
+		System.out.println("Animales: " + administracion.getCantidadTotal());
+		System.out.println("Promedio de edad: " + administracion.getPromEdad());
+		System.out.println("Peso total: " + administracion.getPesoTotal());
+		System.out.println("Peso promedio: " + administracion.getPromPeso());
+		
 		Camion camion1 = new Camion(1, "AA 102 BC");
 		Camion camion2 = new Camion(7, "AC 206 FG");
+		
+		administracion.mostrarCamion(camion1);
+		administracion.mostrarCamion(camion2);
+		
 		administracion.addCamionAFlota(camion1);
 		administracion.addCamionAFlota(camion2);
 		administracion.cargarCamiones(And2);
 		
-		System.out.println("Animales: " + administracion.getCantidad());
-		System.out.println("Promedio de edad: " + administracion.getPromEdad());
-		System.out.println("Peso total: " + administracion.getPesoTotal());
-		System.out.println("Peso promedio: " + administracion.getPromPeso());
 		
 		System.out.println(administracion.clasificar((Animal) animal1100));
 		
 		administracion.mostrarCamion(camion1);
 		administracion.mostrarCamion(camion2);
 		
+		administracion.mostrarEstadoGanaderia((GrupoGanadero) central);
+		System.out.println("Animales: " + administracion.getCantidadTotal());
+		System.out.println("Promedio de edad: " + administracion.getPromEdad());
+		System.out.println("Peso total: " + administracion.getPesoTotal());
+		System.out.println("Peso promedio: " + administracion.getPromPeso());
 	}
 
 }
