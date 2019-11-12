@@ -14,7 +14,7 @@ public abstract class ElementoGanadero {
 	
 	public abstract List<Animal> buscar(Filtro f);
 	
-	public abstract List<Animal> cargarCamion(Camion c, Filtro f);
+	public abstract List<Animal> cargarCamion(Camion c);
 	
 	//return double
 	public double getPromPeso() {

@@ -5,16 +5,19 @@ import java.util.Iterator;
 import java.util.List;
 
 import tpe.Composite.Animal;
+import tpe.Filtros.Filtro;
 
 public class Camion implements Iterable<Animal>{
 	String patente;
 	int capacidad;
 	List<Animal> carga;
+	Filtro criterio;
 	
-	public Camion(int capacidad, String patente) {
+	public Camion(String patente, int capacidad, Filtro criterio) {
 		this.capacidad = capacidad;
 		carga = new ArrayList<>();
 		this.patente = patente;
+		this.criterio = criterio;
 	}
 	
 	public String getPatente() {
@@ -26,7 +29,7 @@ public class Camion implements Iterable<Animal>{
 	}
 
 	public boolean agregar(Animal a) {
-		if(carga.size() < this.capacidad) {
+		if(carga.size() < this.capacidad && criterio.cumple(a)) {
 			return carga.add(a);
 		}
 		return false;
@@ -46,6 +49,13 @@ public class Camion implements Iterable<Animal>{
 		return carga;
 	}
 	*/
+	
+	public boolean acepta(Animal a) {
+		if(criterio != null) {
+			return criterio.cumple(a) && !this.isCompleto();
+		}
+		return false;
+	}
 	
 	public boolean isCompleto() {
 		return carga.size() == getCapacidad();

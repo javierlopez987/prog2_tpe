@@ -70,10 +70,10 @@ public class GrupoGanadero extends ElementoGanadero implements Iterable<Elemento
 	}
 
 	@Override
-	public List<Animal> cargarCamion(Camion c, Filtro f) {
+	public List<Animal> cargarCamion(Camion c) {
 		List<Animal> result = new ArrayList<>();
 		for(ElementoGanadero e: rodeo) {
-			result.addAll(e.cargarCamion(c, f));
+			result.addAll(e.cargarCamion(c));
 		}
 		descargarStock(result);
 		return result;

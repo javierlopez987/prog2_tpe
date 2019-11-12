@@ -96,13 +96,14 @@ public class ProgramaGanadero {
 		Filtro raza1 = new RazaFiltro("Aberdeen Angus");
 		Filtro edadmayor = new EdadFiltroMay(15);
 		Filtro noMadre = new TernerosParidosFiltroIgual(0);
-		Filtro And = new AndFiltro(vaca, edadmayor);
-		Filtro And2 = new AndFiltro(And, noMadre);
+		Filtro and = new AndFiltro(vaca, edadmayor);
+		Filtro and2 = new AndFiltro(and, noMadre);
 		
 		administracion.addCategoriaDeClasificacion(vaca, "Hembra");
-		administracion.addCategoriaDeClasificacion(And2, "Vaquillona");
+		administracion.addCategoriaDeClasificacion(and2, "Vaquillona");
 		administracion.addCategoriaDeClasificacion(raza1, "Raza Fuerte");
 		administracion.addCategoriaDeClasificacion(noMadre, "No madre");
+		System.out.println(administracion.clasificar((Animal) animal1100));
 		
 		administracion.mostrarEstadoGanaderia((GrupoGanadero) central);
 		System.out.println("Animales: " + administracion.getCantidadTotal());
@@ -110,18 +111,18 @@ public class ProgramaGanadero {
 		System.out.println("Peso total: " + administracion.getPesoTotal());
 		System.out.println("Peso promedio: " + administracion.getPromPeso());
 		
-		Camion camion1 = new Camion(1, "AA 102 BC");
-		Camion camion2 = new Camion(7, "AC 206 FG");
+		Camion camion1 = new Camion("AA 102 BC", 1, raza1);
+		Camion camion2 = new Camion("AC 206 FG", 7, and2);
 		
 		administracion.mostrarCamion(camion1);
 		administracion.mostrarCamion(camion2);
 		
 		administracion.addCamionAFlota(camion1);
 		administracion.addCamionAFlota(camion2);
-		administracion.cargarCamiones(And2);
+		administracion.cargarCamion(camion1);
+		administracion.cargarCamion(camion2);
 		
 		
-		System.out.println(administracion.clasificar((Animal) animal1100));
 		
 		administracion.mostrarCamion(camion1);
 		administracion.mostrarCamion(camion2);

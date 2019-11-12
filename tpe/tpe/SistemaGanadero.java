@@ -59,12 +59,8 @@ public class SistemaGanadero {
 		return ganaderia.buscar(f);
 	}
 	
-	public List<Animal> cargarCamiones(Filtro f) {
-		List<Animal> result = new ArrayList<>();
-		for(Camion c: flota) {
-			result.addAll(ganaderia.cargarCamion(c, f));
-		}
-		return result;
+	public void cargarCamion(Camion c) {
+		ganaderia.cargarCamion(c);
 	}
 	
 	public double getPromPeso() {
